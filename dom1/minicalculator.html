@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="num1" type="number" />
+    <input id="num2" type="number" />
+    <p id="display"></p>
+    <button onclick="add()">add</button>
+    <button onclick="sub()">sub</button>
+    <button onclick="mul()">multi</button>
+    <button onclick="divi()">divide</button>
+    <button onclick="clear()">clear</button>
+  </body>
+</html>
+<script>
+  function add() {
+    let num1 = document.getElementById("num1").value;
+    let num2 = document.getElementById("num2").value;
+    let ans = Number(num1) + Number(num2);
+    console.log(num1, num2);
+    let p = document.getElementById("display");
+    p.innerText = ans;
+  }
+  function sub() {
+    let num1 = document.getElementById("num1").value;
+    let num2 = document.getElementById("num2").value;
+    let ans = Number(num1) - Number(num2);
+    console.log(num1, num2);
+    let p = document.getElementById("display");
+    p.innerText = ans;
+  }
+  function mul() {
+    let num1 = document.getElementById("num1").value;
+    let num2 = document.getElementById("num2").value;
+    let ans = Number(num1) * Number(num2);
+    console.log(num1, num2);
+    let p = document.getElementById("display");
+    p.innerText = ans;
+  }
+  function divi() {
+    let num1 = document.getElementById("num1").value;
+    let num2 = document.getElementById("num2").value;
+    let ans = Number(num1) / Number(num2);
+    console.log(num1, num2);
+    let p = document.getElementById("display");
+    p.innerText = ans;
+  }
+  function clear() {
+    let p = document.getElementById("display");
+  
+  }
+</script>
