@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="myInput" />
+    <p>Enter the text</p>
+    <button id="myButton" onclick="showname()">Submit</button>
+    <script>
+      function showname() {
+        let p = document.querySelector("p");
+        let name = document.getElementById("myInput");
+        alert(name.value);
+
+        p.innerText = "Enter text is: " + name.value;
+      }
+    </script>
+  </body>
+</html>
