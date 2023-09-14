@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        text-align: center;
+        color: teal;
+        font-family: "Courier New", Courier, monospace;
+        /* font-size: 22px; */
+      }
+      #mainbox {
+        margin: auto;
+        width: 400px;
+        height: 500px;
+        /* border: 1px solid black; */
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      }
+      #buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 10px;
+        padding: 10px;
+        padding-top: 30px;
+      }
+      #buttons > div {
+        /* border: 1px solid blue; */
+        width: 80px;
+        height: 80px;
+      }
+      /* .inputtag{
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            height: 80px;
+            width: 360px;
+            margin: auto;
+            font-size: 22px;
+        } */
+      #inputbox {
+        height: 80px;
+        width: 360px;
+        margin: auto;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px,
+          rgb(51, 51, 51) 0px 0px 0px 3px;
+        padding: 12px;
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: auto;
+      }
+      #buttons > div {
+        font-size: 40px;
+        text-align: center;
+        line-height: 75px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        border-radius: 10px;
+      }
+      #buttons div:nth-child(4) {
+        background-color: black;
+        color: white;
+      }
+      #buttons div:nth-child(8) {
+        background-color: black;
+        color: white;
+      }
+      #buttons div:nth-child(12) {
+        background-color: black;
+        color: white;
+      }
+      #buttons div:nth-child(15) {
+        background-color: black;
+        color: white;
+      }
+      #buttons div:nth-child(16) {
+        background-color: black;
+        color: white;
+      }
+
+      #buttons div:nth-child(13) {
+        background-color: red;
+        color: white;
+      }
+      #buttons > div:hover {
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Masai Calculator</h1>
+    <div id="mainbox">
+      <div id="inputbox">
+        <!-- <input type="number" class="inputtag"> -->
+      </div>
+      <div id="buttons">
+        <div id="one" value="1">1</div>
+        <div value="2">2</div>
+        <div value="3">3</div>
+        <div>+</div>
+        <div value="4">4</div>
+        <div value="5">5</div>
+        <div value="6">6</div>
+        <div>-</div>
+        <div value="7">7</div>
+        <div value="8">8</div>
+        <div value="9">9</div>
+        <div>X</div>
+        <div>C</div>
+        <div value="0">0</div>
+        <div>=</div>
+        <div>/</div>
+      </div>
+    </div>
+  </body>
+</html>
+<script type="text/javascript">
+  // function print1(){
+  //     let button = Number(document.getElementById("one").innerText);
+
+  // }
+  let keys = document.querySelectorAll("#buttons>div");
+  console.log(keys);
+  for (let i = 0; i < keys.length; i++) {
+    keys[i].addEventListener("click", myCalculator);
+  }
+  let bag = "";
+  function myCalculator(event) {
+    // console.log(event.target.innerText);
+    let targetNumber = event.target.innerText;
+    // console.log(targetNumber);
+    if (targetNumber == "C") {
+      bag = "";
+      document.querySelector("#inputbox").innerText = "";
+    } else if (targetNumber == "=") {
+      if (bag == "") {
+        bag = "";
+        // alert("Hello")
+        document.querySelector("#inputbox").innerText = bag;
+      } else {
+        document.querySelector("#inputbox").innerText = eval(bag);
+      }
+      bag = "";
+    } else {
+      bag += targetNumber;
+      console.log(bag);
+      document.querySelector("#inputbox").innerText = bag;
+    }
+
+    console.log(eval(2 + 5));
+  }
+</script>

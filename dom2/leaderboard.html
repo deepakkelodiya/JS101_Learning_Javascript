@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <h1>MINIMUM</h1>
+    <h1 id="first">100</h1>
+    <h1>MAXIMUM</h1>
+    <h1 id="second">100</h1>
+    <input id="inputnumber" type="number" />
+    <button onclick="check()">Check</button>
+  </body>
 </html>
+<script>
+  function check() {
+    let inputnum = +document.getElementById("inputnumber").value;
+    let first = +document.getElementById("first").innerText;
+    let second = +document.getElementById("second").innerText;
+    // alert(inputnum + 3 + ":" + first + 1 + ":" + second + 1);
+
+    if (inputnum < first) {
+      document.getElementById("first").innerText = inputnum;
+    } else if (inputnum > second) {
+      document.getElementById("second").innerText = inputnum;
+    }
+  }
+</script>
